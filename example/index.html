@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Example</title>
+    </head>
+    <body>
+        <p id="textToCopy">Please Copy Me</p>
+        <p id="textToCopy2">Line Break <br> Test</p>
+        <button type="button" id="copyButton">Copy</button>
+        <script type="text/javascript" src="../cap.js"></script>
+        <script type="text/javascript">
+            cap.init({
+                input: {
+                    visible:false,
+                    type: inputType.text
+                },
+                lineBreak: true
+            });
+            document.getElementById("copyButton").addEventListener("click", function(){
+                cap.copy('#textToCopy2');
+            });
+            
+        </script>
+    </body>
+</html>
