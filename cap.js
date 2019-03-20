@@ -17,7 +17,9 @@ class cap {
                 position: null,
                 timeout: 1000
             },
-            lineBreak: true
+            lineBreak: true,
+            onReady: null,
+            onSuccess: null
         };
         this.options = $.extend(true, {},
             this.default, customOptions);
@@ -26,6 +28,10 @@ class cap {
     static copy(elem, customOptions) {
         if (customOptions) {
             this.options = $.extend(true, {}, this.options, customOptions);
+        }
+
+        if (this.options.onReady) {
+            this.options.onReady();
         }
 
         this.removeElem('.' + INPUT_CLASS_NAME);
@@ -43,6 +49,11 @@ class cap {
 
         if (this.options.successMessage.enable) {
             this.generateSuccessMsg(elem);
+        }
+
+
+        if (this.options.onSuccess) {
+            this.options.onSuccess();
         }
     }
 
@@ -81,7 +92,7 @@ class cap {
     }
 
     static parseLineBreak(html) {
-        var re = new RegExp(TAG.BR,"g");
+        var re = new RegExp(TAG.BR, "g");
         return html.replace(re, '\r');
     }
 
