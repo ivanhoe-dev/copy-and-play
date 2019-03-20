@@ -1,24 +1,190 @@
 <html>
-    <head>
-        <title>Example</title>
-    </head>
-    <body>
-        <p id="textToCopy">Please Copy Me</p>
-        <p id="textToCopy2">Line Break <br> Test</p>
-        <button type="button" id="copyButton">Copy</button>
-        <script type="text/javascript" src="../cap.js"></script>
-        <script type="text/javascript">
-            cap.init({
+
+<head>
+    <title>Copy And Play Example</title>
+    <style>
+        .c-container {
+            margin: 50px;
+        }
+
+        .card {
+            width: 100% !important;
+        }
+
+        .card-header {
+            text-align: center;
+        }
+
+        .card-body input,
+        .card-body textarea {
+            float: right;
+            border-radius: 4px;
+            border-style: solid;
+            border: 1px solid #c5c5c5;
+            padding: 5px;
+        }
+
+        #copySuccessMsg {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container c-container">
+        <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-8">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        Inline Text
+                    </div>
+                    <div class="card-body">
+                        <p id="textToCopy">Hello World</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-primary btn-sm" type="button" id="copyButton">Copy</button>
+                        <button class="btn-primary btn-sm" type="button" id="copyWithTextButton">Copy With Text Box
+                            Shown</button>
+                        <button class="btn-primary btn-sm" type="button" id="copyWithTextAreaButton">Copy With Text Area
+                            Shown</button>
+                        <button class="btn-primary btn-sm" type="button" id="copyWithSuccessMsgButton">Copy With Success
+                            Message</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+            </div>
+        </div>
+    </div>
+
+    <div class="container c-container">
+        <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-8">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        Text With Line Break
+                    </div>
+                    <div class="card-body">
+                        <p id="textToCopy2">
+                            Hypertext Markup Language (HTML) <br>
+                            is the standard markup language for creating web pages and web applications. <br>
+                            With Cascading Style Sheets (CSS) and JavaScript, <br>
+                            it forms a triad of cornerstone technologies for the World Wide Web.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-primary btn-sm" type="button" id="copyButton2">Copy</button>
+                        <button class="btn-primary btn-sm" type="button" id="copyWithTextAreaButton2">Copy With Text Area
+                            Shown</button>
+                        <button class="btn-primary btn-sm" type="button" id="copyWithSuccessMsgButton2">Copy With Success
+                            Message</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstraps and Jquery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Copy And Play -->
+    <script type="text/javascript" src="../cap.js"></script>
+    <script type="text/javascript">
+        // Init Your Global Options Here If you want to Apply To All
+        cap.init({
+            successMessage: {
+                enable: false
+            },
+            lineBreak: false
+        });
+
+        // Inline Text
+        $('#copyButton').on("click", function () {
+            cap.copy('#textToCopy', {
                 input: {
-                    visible:false,
-                    type: inputType.text
+                    visible: false,
+                },
+                successMessage: {
+                    enable: false
+                },
+                lineBreak: false
+            });
+        });
+
+        $('#copyWithTextButton').on("click", function () {
+            cap.copy('#textToCopy', {
+                input: {
+                    visible: true,
+                    type: INPUT.TEXT
+                }
+            });
+        });
+
+        $('#copyWithTextAreaButton').on("click", function () {
+            cap.copy('#textToCopy', {
+                input: {
+                    visible: true,
+                    type: INPUT.TEXTAREA
+                }
+            });
+        });
+
+        $('#copyWithSuccessMsgButton').on("click", function () {
+            cap.copy('#textToCopy', {
+                input: {
+                    visible: false
+                },
+                successMessage: {
+                    enable: true,
+                    timeout: 3000
+                },
+            });
+        });
+
+        // Text With Line Break
+        $('#copyButton2').on("click", function () {
+            cap.copy('#textToCopy2', {
+                input: {
+                    visible: false,
+                },
+                successMessage: {
+                    enable: false
                 },
                 lineBreak: true
             });
-            document.getElementById("copyButton").addEventListener("click", function(){
-                cap.copy('#textToCopy2');
+        });
+
+        $('#copyWithTextAreaButton2').on("click", function () {
+            cap.copy('#textToCopy2', {
+                input: {
+                    visible: true,
+                    type: INPUT.TEXTAREA
+                },
+                lineBreak: true
             });
-            
-        </script>
-    </body>
+        });
+
+        $('#copyWithSuccessMsgButton2').on("click", function () {
+            cap.copy('#textToCopy2', {
+                input: {
+                    visible: false
+                },
+                successMessage: {
+                    enable: true,
+                    timeout: 3000
+                },
+                lineBreak: true
+            });
+        });
+    </script>
+</body>
+
 </html>
