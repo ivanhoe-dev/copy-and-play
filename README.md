@@ -6,6 +6,7 @@ https://ivanhoe-dev.github.io/copy-and-play/
 
 ### Installation
 
+npm install copy-and-play
 
 ### Usage
 1. Import your Jquery and `cap.js` itself
