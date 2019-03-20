@@ -13,7 +13,7 @@ https://ivanhoe-dev.github.io/copy-and-play/
         <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
         <script type="text/javascript" src="cap.js"></script>
 	
-2. As `cap.js` contains ES6 code, if you want to support old browsers, please import polyfill libraries (e.g. [babel.js](https://github.com/babel/babel "babel.js")) before it
+2. As `cap.js` contains ES6 code, if you want to support old browsers and IE, please import 'cap-es5.js' instead (e.g. [babel.js](https://github.com/babel/babel "babel.js")) before it
 
 3. Call `cap.init()` if you want to apply settings globally
 
@@ -59,6 +59,9 @@ An example of the setting JSON:
 ### Line Break
 Line break can be remained and copied by the option `lineBreak`
 However, as it only supports with a `textarea`, if you want to support copying line break, the library will set the input type as `textarea` by itself
+
+### Browser Support
+The library is compatible with Safari 11(IOS11), IE 11, Mozilla Firefox 65.0, Google chrome 72.0
 
 ### Author
 [ivanhoe-dev](https://github.com/ivanhoe-dev "ivanhoe-dev") 
