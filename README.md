@@ -1,4 +1,4 @@
-### Copy And Play
+## Copy And Play
 A customizable, cross platform and easy to use text copying library.
 
 ### Demo
@@ -28,7 +28,7 @@ https://ivanhoe-dev.github.io/copy-and-play/
 An example of the setting JSON:
 
     {
-			input: {
+	    	input: {
                 visible: false,
                 type: INPUT.TEXTAREA
             },
