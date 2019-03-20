@@ -1,13 +1,13 @@
-###Copy And Play
+### Copy And Play
 A customizable, cross platform and easy to use text copying library.
 
-###Demo
+### Demo
 https://ivanhoe-dev.github.io/copy-and-play/
 
-###Installation
+### Installation
 
 
-###Usage
+### Usage
 1. Import your Jquery and `cap.js` itself
 
         <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
@@ -24,7 +24,7 @@ https://ivanhoe-dev.github.io/copy-and-play/
 | selector  | Jquery selector string   |the target to be copied|
 |  settings (optional) |  JSON |the settings apply to this copy action locally|
 
-###Settings JSON
+### Settings JSON
 An example of the setting JSON:
 
     {
@@ -43,7 +43,7 @@ An example of the setting JSON:
             onSuccess: null
 	}
 
-###Settings Details
+### Settings Details
 |Option   |Type   |Description   |Default value
 | ------------ | ------------ | ------------ |------------ |
 |  input.visible | boolean  | The visibility of HTML input after copied  | false|
@@ -56,10 +56,10 @@ An example of the setting JSON:
 |  onReady |  function | callback before the copy action perform  |null|
 |  onSuccess |  function | callback after the copy action perform   |null|
 
-###Line Break
+### Line Break
 Line break can be remained and copied by the option `lineBreak`
 However, as it only supports with a `textarea`, if you want to support copying line break, the library will set the input type as `textarea` by itself
 
-###Author
+### Author
 [ivanhoe-dev](https://github.com/ivanhoe-dev "ivanhoe-dev") 
 2019-03-20
