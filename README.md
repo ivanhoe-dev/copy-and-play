@@ -14,7 +14,7 @@ npm install copy-and-play
         <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
         <script type="text/javascript" src="cap.js"></script>
 	
-2. As `cap.js` contains ES6 code, if you want to support old browsers and IE, please import 'cap-es5.js' instead (e.g. [babel.js](https://github.com/babel/babel "babel.js")) before it
+2. As `cap.js` contains ES6 code, if you want to support old browsers and IE, please import 'cap-es5.js' instead
 
 3. Call `cap.init()` if you want to apply settings globally
 
