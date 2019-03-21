@@ -1,0 +1,27 @@
+{
+  "name": "copy-and-play",
+  "version": "1.0.0",
+  "description": "A customizable, cross platform and easy to use text copying library.",
+  "main": "cap-es5.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanhoe-dev/copy-and-play.git"
+  },
+  "keywords": [
+    "copy",
+    "clipboard",
+    "jquery"
+  ],
+  "author": "ivanhoe-dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivanhoe-dev/copy-and-play/issues"
+  },
+  "homepage": "https://github.com/ivanhoe-dev/copy-and-play#readme"
+}

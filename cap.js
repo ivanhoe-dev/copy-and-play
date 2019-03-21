@@ -27,7 +27,7 @@ class cap {
 
     static copy(elem, customOptions) {
         if (customOptions) {
-            this.options = $.extend(true, {}, this.options, customOptions);
+            this.options = $.extend(true, {}, this.default, customOptions);
         }
 
         if (this.options.onReady) {
